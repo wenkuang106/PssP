@@ -10,7 +10,7 @@
 
                 <h2 style="margin-bottom: 1em;"> Patient List
                     <button type="button" class="btn btn-success float-right"
-                        data-toggle="modal" data-target="#addpatient">Add New Patient
+                        data-toggle="modal" data-target="#addpatient">Add Patient
                     </button> 
                 </h2>
 
@@ -43,7 +43,10 @@
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Zip Code</th>
+                        <th>D.O.B </th>
                         <th>Gender</th>
+                        <th>Phone</th>
+                        <th>Email</th>
                         <th>Setting</th>
 
                     </tr>
@@ -57,6 +60,9 @@
                         <td>{{row.last_name}}</td>
                         <td>{{row.zip_code}} </td>
                         <td>{{row.gender}}</td>
+                        <td>{{row.dob}}</td>
+                        <td>{{row.contact_mobile}}</td>
+                        <td>{{row.contact_email}}</td>
                         <td>
                             <a href="/update/{{row.mrn}}" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#modaledit{{row.mrn}}">Edit</a>
                             <a href="/delete/{{row.mrn}}" class="btn btn-danger btn-xs" onclick="return confirm('Are You Sure To Delete ?')">Delete</a>
@@ -93,6 +99,18 @@
                                 <div class="form-group">
                                     <label>Gender:</label>
                                     <input type="text" class="form-control" name="gender" value="{{row.gender}}">
+                                </div> 
+                                <div class="form-group">
+                                    <label>D.O.B:</label>
+                                    <input type="text" class="form-control" name="dob" value="{{row.dob}}">
+                                </div> 
+                                <div class="form-group">
+                                    <label>Phone:</label>
+                                    <input type="text" class="form-control" name="phone" value="{{row.contact_mobile}}">
+                                </div> 
+                                <div class="form-group">
+                                    <label>Email:</label>
+                                    <input type="text" class="form-control" name="email" value="{{row.contact_email}}">
                                 </div> 
                                 <div class="form-group">
                                     <button class="btn btn-primary" type="submit">Update</button>
@@ -146,8 +164,20 @@
                                 <input type="text" class="form-control" name="zip_code" required="1">
                             </div>
                             <div class="form-group">
+                                <label>Date of Birth: </label>
+                                <input type="text" class="form-control" name="dob">
+                            </div>
+                            <div class="form-group">
                                 <label> Gender </label>
                                 <input type="text" class="form-control" name="gender" required="1">
+                            </div>
+                            <div class="form-group">
+                                <label> Phone </label>
+                                <input type="text" class="form-control" name="contact_mobile">
+                            </div>
+                            <div class="form-group">
+                                <label>Email </label>
+                                <input type="text" class="form-control" name="contact_email">
                             </div>
                             <div class="form-group">
                                 <button class="btn btn-primary" type="submit">Add Patient</button>
